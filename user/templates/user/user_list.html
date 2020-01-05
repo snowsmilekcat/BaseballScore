@@ -1,0 +1,24 @@
+{% extends 'user/base.html' %}
+{% block content %}
+     <p>{{ pageId }}</p>
+     <table>
+        <tr style="background-color:green;">
+          <th>名前</th>
+          <th>背番号</th>
+          <th>ポジション</th>
+          <th></th>
+          <th></th>
+        </tr>
+        {% for user in users %}
+        <tr style="background-color:white;">
+          <td style="width:100px;">{{user.name}}</td>
+          <td style="width:50px;">{{user.back_number}}</td>
+          <td style="width:100px;">{{user.position}}</td>
+          <td style="width:50px; background-color:yellow; border-radius: 5px; text-align: center;"><a href="{% url 'user_update' userId=user.id %}">編集</a></td>
+          <td style="width:50px; background-color:grey; border-radius: 5px; text-align: center;"><a href="#">削除</a></td>
+          <td style="visibility:hidden;" >{{user.id}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{% url 'user_create' %}" class="btn new">新規登録</a>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+ <html>
+  <head>
+  <meta charset="utf-8">
+  <title>templates</title>
+  <link rel="stylesheet" href="{% static 'css/user.css' %}">
+  </head>
+  <body>
+  <!-- ここにコードを書いていきましょう -->
+  <header>
+    <div >
+      {% if pageId != "user_main" %}
+        <a href="{% url 'user_main' %}" class="header-left">TOP</a>
+      {% endif %}
+    </div>
+  </header>
+  <div class="main">
+    {% block content %}
+        <!--{{pageId}}-->
+　　{% endblock %}
+  </div>
+  <footer>
+
+  </footer>
+  </body>
+ </html>

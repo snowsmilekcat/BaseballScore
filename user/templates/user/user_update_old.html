@@ -1,0 +1,30 @@
+<!--{% extends 'user/base.html' %}
+{% block content %}
+  <p>{{pageId}}</p>
+  <p>{{user}}</p>
+  <h1>変更</h1>
+  <form method="POST" class="post-form">{% csrf_token %}
+  {% for f in user %}
+  <h2>
+     <div class="name">
+       <p class="regist">名前</p>
+       <input type="text" name="name" value="{{f.name}}">
+     </div>
+     <div class="back_number">
+       <p class="regist">背番号</p>
+       <input type="text" name="back_number" value="{{f.back_number}}">
+     </div>
+     <div class="position">
+       <p class="regist">ポジション</p>
+       <input type="text" name="position" value="{{f.position}}">
+     </div>
+     <div class="sub_position">
+       <p class="regist">サブポジション</p>
+       <input type="text" name="sub-position" value="{{f.sub_position}}">
+     </div>
+     <a href="{% url 'user_update' userId=f.id %}" class="btn update" type="submit">変更</a>
+     <button type="submit" class="btn update">変更</button>
+  </h2>
+  {% endfor %}
+  </form>
+{% endblock %}-->

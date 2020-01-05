@@ -1,0 +1,24 @@
+{% extends 'user/base.html' %}
+{% block content %}
+  <p>{{pageId}}</p>
+  <h1>削除</h1>
+  <h2>
+     <div class="name">
+       <p class="regist">名前</p>
+       <input type="text" name="name" value="">
+     </div>
+     <div class="back_number">
+       <p class="regist">背番号</p>
+       <input type="text" name="back_number" value="">
+     </div>
+     <div class="position">
+       <p class="regist">ポジション</p>
+       <input type="text" name="position" value="">
+     </div>
+     <div class="sub-position">
+       <p class="regist">ポジション</p>
+       <input type="text" name="sub-position" value="">
+     </div>
+  </h2>
+  <a href="#" class="btn delete">削除</a>
+{% endblock %}

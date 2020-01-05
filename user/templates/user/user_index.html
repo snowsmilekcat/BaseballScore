@@ -1,0 +1,35 @@
+{% extends 'user/base.html' %}
+{% block content %}
+<h1>Players</h1>
+<section class="post-list">
+    <ul>
+        {% for user in object_list %}
+        <li>
+            <h2><a href="{% url 'user_detail' user.pk %}">{{ user.name }}</a></h2>
+        </li>
+        {% empty %}
+        <li class="no-post">
+            <p>No articles yet.</p>
+        </li>
+        {% endfor %}
+    </ul>
+</section>
+<section>
+        <p><a class="btn new" href="{% url 'user_create' %}">新規登録</a></p>
+</section>
+
+{% if is_paginated %}
+<section class="pagination">
+    {% if page_obj.has_previous %}
+    <a class="page" style="margin-left:20px;" href="?page={{ page_obj.previous_page_number }}">&lt;&lt; Prev</a>
+    {% else %}
+    <span style="margin-left:20px;">&lt;&lt; Prev</span>
+    {% endif %}
+    {% if page_obj.has_next %}
+    <a class="page" href="?page={{ page_obj.next_page_number }}">Next &gt;&gt;</a>
+    {% else %}
+    Next &gt;&gt;
+    {% endif %}
+</section>
+{% endif %}
+{% endblock %}

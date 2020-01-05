@@ -1,0 +1,17 @@
+{% extends 'user/base.html' %}
+{% block content %}
+<h1>{{ object.name }}</h1>
+<!--<section class="post-text">
+    {{ object.name|linebreaksbr }}
+</section>-->
+<section class="post-date">
+    <p>Created:&nbsp;{{ object.created_date }}<span>/</span>Updated:&nbsp;{{ object.created_date }}</p>
+</section>
+<section class="post-edit">
+    <a class="btn update" href="{% url 'user_update' user.pk %}">編集</a>
+    <a class="btn delete" href="{% url 'user_delete' user.pk %}">削除</a>
+</section>
+<section>
+    <p><a class="back" href="javascript:history.back()">&lt; Back</a></p>
+</section>
+{% endblock %}
